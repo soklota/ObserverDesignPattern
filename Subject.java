@@ -1,8 +1,4 @@
-
-/**
- * Author: Sydney Oklota
- * 
- */
+//Author: Sydney Oklota
 public interface Subject{
 
     public void registerObserver(Observer observer);

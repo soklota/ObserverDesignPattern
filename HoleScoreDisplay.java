@@ -6,8 +6,8 @@ public class HoleScoreDisplay implements Observer {
     private int par;
 
     /**
-     * 
-     * displays current hole scores 
+     * calls for golfer in array list in order to calculate their score
+     * @param golfer golfer
      */
 
     public HoleScoreDisplay(Subject golfer){
@@ -16,12 +16,20 @@ public class HoleScoreDisplay implements Observer {
         golfer.registerObserver(this);
     }
 
+    /**
+     * updates scores in order to be displayed
+     * @param strokes number of strokes
+     * @param par number of pars
+     */
     public void update(int strokes, int par){
         this.strokes = strokes;
         this.par = par;
         displayCurrentScore();
     }
 
+    /**
+     * displays updated score of current hole
+     */
     private void displayCurrentScore(){
         
         System.out.println("Current Hole Stats");

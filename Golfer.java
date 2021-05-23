@@ -1,7 +1,4 @@
-/**
- * Author Sydney Oklota
- */
-
+//Author Sydney Oklota
 import java.util.ArrayList;
 
 public class Golfer implements Subject {
@@ -11,7 +8,7 @@ private String name = " ";
 
 /**
  * creates arraylist and assigns name to golfer
- * @param golfer
+ * @param golfer golfer
  */
 public Golfer(String golfer){
     observers = new ArrayList<Observer>();
@@ -19,14 +16,16 @@ public Golfer(String golfer){
 }
 
 /**
- * registers observer
+ * registers observer, adding them to the array list
+ * @param observer array list of observers
  */
 public void registerObserver(Observer observer){
     observers.add(observer);
 }
 
 /**
- * removes observer
+ * removes observer from the array list
+ * @param observer array list of observers
  */
 public void removeObserver(Observer observer){
     observers.remove(observer);
@@ -34,6 +33,8 @@ public void removeObserver(Observer observer){
 
 /**
  * creates a loop and updates arraylist with strokes and par
+ * @param strokes number of strokes
+ * @param par number of pars
  */
 public void notifyObservers(int strokes, int par){
     for(Observer observer : observers) {
@@ -43,8 +44,8 @@ public void notifyObservers(int strokes, int par){
 
 /**
  * calls notifyobservers
- * @param strokes
- * @param par
+ * @param strokes number of strokes
+ * @param par number of pars
  */
 public void enterScore(int strokes, int par){
     notifyObservers(strokes, par);
@@ -52,7 +53,7 @@ public void enterScore(int strokes, int par){
 
 /**
  * name of golfer
- * @return
+ * @return name of golfer
  */
 public String getName(){
 

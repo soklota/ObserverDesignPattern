@@ -1,15 +1,14 @@
+// Author: Sydney Oklota
 public class RoundScoreDisplay implements Observer{
-
-
 
 private Subject golfer;
 private int strokesTotal;
 private int parTotal;
-/**
- * display round scores 
- * adds scores of each hole
- */
 
+/**
+ * calls for golfer in array list to show their score
+ * @param golfer new observer
+ */
 public RoundScoreDisplay(Subject golfer){
 
     this.golfer = golfer;
@@ -17,6 +16,11 @@ public RoundScoreDisplay(Subject golfer){
 
 }
 
+/**
+ * updates score for the round in order to be displayed
+ * @param strokes number of strokes
+ * @param par number of pars
+ */
 public void update(int strokes, int par){
     strokesTotal += strokes;
     parTotal += par;
@@ -24,6 +28,10 @@ public void update(int strokes, int par){
 
 }
 
+
+/**
+ * displays updated score for each round
+ */
 private void displayRoundScore(){
     
     System.out.println("Current Round Stats");
